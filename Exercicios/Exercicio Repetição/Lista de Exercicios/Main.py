@@ -101,14 +101,84 @@ print(f'Números pares: {lista_pares}')
 print(f'Números ímpares: {lista_impares}')
 """
 
-
+"""
 #Exercicio 07
+frase = input("Digite uma frase: ").upper()
 
+lista_vogal = []
+vogais = 'AEIOU'
 
+for letra in frase:
+    if letra in vogais:
+        lista_vogal.append(letra)
+
+for vogal in vogais:
+    quantidade = lista_vogal.count(vogal)
+    if quantidade > 0:
+        print(f'A letra ({vogal}) apareceu {quantidade} vez(es)')
+"""
+
+"""
 #Exercicio 08
+import random
 
+moeda = ['cara', 'coroa']
+cara = 0
+coroa = 0
 
+while cara < 3 and coroa < 3:
+    resultado = random.choice(moeda)
+    print(f'Caiu o lado {resultado}')
+    if resultado == 'cara':
+        cara += 1
+    else:
+        coroa += 1
 
+if cara < coroa:
+    print("Caiu coroa mais vezes")
+else:
+    print("Caiu cara mais vezes")
+"""
+
+"""
+#Exercicio 09
+tamanho = int(input("Digite a quantidade de numeros na lista: "))
+lista = []
+num_maior_media = []
+
+for i in range(tamanho):
+    i += 1
+    num = int(input("Digite um número: "))
+    lista.append(num)
+
+media = sum(lista) / len(lista)
+print(f'A média dos números é: {media}')
+
+for i in range(len(lista)):
+    if lista[i] > media:
+        num_maior_media.append(lista[i])
+
+print(f'O números acima da média é: {num_maior_media}')
+"""
+
+"""
+#Exercicio 10
+tamanho = int(input("Digite a quantidade de numeros na lista: "))
+lista = []
+
+for i in range(tamanho):
+    i += 1
+    num = int(input("Digite um número: "))
+    lista.append(num)
+
+maior_num = max(lista)
+print(f'O maior número da lista é: {maior_num}')
+
+lista.remove(maior_num)
+maior_num = max(lista)
+
+print(f'O segundo maior número da lista é: {maior_num}')
+"""
 
 
 
