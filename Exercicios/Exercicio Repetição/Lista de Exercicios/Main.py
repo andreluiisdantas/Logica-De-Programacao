@@ -255,19 +255,6 @@ else:
 
 """
 
-a = 1
-b = 2
-c = 0
-
-for i in range(1, 6):
-    if i % 2 == 0:
-        a += i
-
-    else:
-        b *= i
-        c = a + b
-
-print(a, b, c)
 
 
 
