@@ -180,9 +180,94 @@ maior_num = max(lista)
 print(f'O segundo maior número da lista é: {maior_num}')
 """
 
+"""
+#Desafio 01
+populacao = int(input("Digite o número inicial de coelhos: "))
+taxa_reproducao = float(input("Digite a taxa de reprodução: "))
+taxa_mortalidade = float(input("Digite a taxa de mortalidade: "))
+num_geracoes = int(input("Digite o número de gerações a serem simuladas: "))
+
+taxa_reproducao = taxa_reproducao * 0.01
+taxa_mortalidade = taxa_mortalidade * 0.01
+
+for geracao in range(1, num_geracoes + 1):
+    nascimentos = populacao * taxa_reproducao
+    mortes = populacao * taxa_mortalidade
+    populacao = populacao + nascimentos - mortes
+    populacao = (int(populacao))
+    print(f"Geração: {geracao} | Coelhos:{populacao}")
+
+print("\nSimulação concluída!")
+"""
+
+"""
+#Desafio 02
+import random
+
+palavras = [
+    "abacaxi", "computador", "python", "girassol", "viagem", "brasil",
+    "escola", "janela", "chocolate", "bicicleta", "telefone", "montanha",
+    "oceano", "elefante", "cachorro", "amizade", "familia", "teclado",
+    "violao", "livro", "pipoca", "chuva", "relampago", "noite", "manha",
+    "sabedoria", "aventura", "floresta", "estrela", "foguete", "jardim",
+    "panqueca", "quintal", "sapato", "formiga", "caderno", "noticia",
+    "fantasma", "praia", "carnaval", "travesseiro", "melancia", "avião"
+]
+
+palavra_secreta = random.choice(palavras)
+letras_descobertas = ["_" for _ in palavra_secreta]
+
+letras_erradas = []
+tentativas_restantes = 6
 
 
+while tentativas_restantes > 0 and "_" in letras_descobertas:
+    print("\nPalavra:", " ".join(letras_descobertas))
+    print("Letras erradas:", ", ".join(letras_erradas))
+    print(f"Tentativas restantes: {tentativas_restantes}")
 
+    letra = input("Digite uma letra: ").lower()
+
+    if not letra.isalpha() or len(letra) != 1:
+        print("Digite apenas uma letra válida.")
+        continue
+
+    if letra in letras_descobertas or letra in letras_erradas:
+        print("Você já tentou essa letra. Tente outra.")
+        continue
+
+    if letra in palavra_secreta:
+        for i in range(len(palavra_secreta)):
+            if palavra_secreta[i] == letra:
+                letras_descobertas[i] = letra
+        print("Boa! Você acertou uma letra.")
+    else:
+        letras_erradas.append(letra)
+        tentativas_restantes -= 1
+        print("Letra errada!")
+
+if "_" not in letras_descobertas:
+    print("\nVocê acertou")
+    print("Palavra correta:", palavra_secreta)
+else:
+    print("\nAcabou as tentativas")
+    print("A palavra era:", palavra_secreta)
+
+"""
+
+a = 1
+b = 2
+c = 0
+
+for i in range(1, 6):
+    if i % 2 == 0:
+        a += i
+
+    else:
+        b *= i
+        c = a + b
+
+print(a, b, c)
 
 
 
